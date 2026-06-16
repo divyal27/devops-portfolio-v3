@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github, Linkedin, FileText } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from '@/components/Icons';
 import Link from 'next/link';
 
 const navItems = [
@@ -74,7 +75,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               className="p-2 rounded-full hover:bg-cyan-100 transition-colors"
             >
-              <Github size={20} className="text-slate-600 hover:text-cyan-600" />
+              <GithubIcon size={20} className="text-slate-600 hover:text-cyan-600" />
             </motion.a>
             <motion.a
               href="https://linkedin.com/in/divyal-padalkar2704"
@@ -84,7 +85,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               className="p-2 rounded-full hover:bg-violet-100 transition-colors"
             >
-              <Linkedin size={20} className="text-slate-600 hover:text-violet-600" />
+              <LinkedinIcon size={20} className="text-slate-600 hover:text-violet-600" />
             </motion.a>
             <motion.a
               href="/resume.pdf"
@@ -141,7 +142,7 @@ export default function Navbar() {
                   whileHover={{ scale: 1.1 }}
                   className="p-2 rounded-full hover:bg-cyan-100"
                 >
-                  <Github size={20} className="text-slate-600" />
+                  <GithubIcon size={20} className="text-slate-600" />
                 </motion.a>
                 <motion.a
                   href="https://linkedin.com/in/divyal-padalkar2704"
@@ -150,7 +151,7 @@ export default function Navbar() {
                   whileHover={{ scale: 1.1 }}
                   className="p-2 rounded-full hover:bg-violet-100"
                 >
-                  <Linkedin size={20} className="text-slate-600" />
+                  <LinkedinIcon size={20} className="text-slate-600" />
                 </motion.a>
               </div>
             </div>

@@ -19,8 +19,6 @@ export default function Home() {
     const lenis = new Lenis({
       lerp: 0.1,
       wheelMultiplier: 1,
-      smoothTouch: false,
-      touchInertiaMultiplier: 30,
       duration: 1.2,
     });
 

@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import ProjectCard from './ProjectCard';
-import { Github, ExternalLink } from 'lucide-react';
 
 const projectCategories = [
   {

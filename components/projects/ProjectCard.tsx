@@ -2,7 +2,8 @@
 
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Sparkles } from 'lucide-react';
+import { ExternalLink, Sparkles } from 'lucide-react';
+import { GithubIcon } from '@/components/Icons';
 import Link from 'next/link';
 
 interface Project {
@@ -139,7 +140,7 @@ export default function ProjectCard({ project, index, inView }: ProjectCardProps
               whileTap={{ scale: 0.95 }}
               className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors text-sm font-semibold"
             >
-              <Github size={16} />
+              <GithubIcon size={16} />
               Code
             </motion.a>
           )}

@@ -2,14 +2,15 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, ExternalLink } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from '@/components/Icons';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/divyal27', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/divyal-padalkar2704', label: 'LinkedIn' },
+    { icon: GithubIcon, href: 'https://github.com/divyal27', label: 'GitHub' },
+    { icon: LinkedinIcon, href: 'https://linkedin.com/in/divyal-padalkar2704', label: 'LinkedIn' },
     { icon: Mail, href: 'mailto:divyal@example.com', label: 'Email' },
   ];
 
