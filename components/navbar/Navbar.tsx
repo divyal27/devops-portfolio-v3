@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/Icons';
 import Link from 'next/link';
+import DevOpsLogo from '@/components/DevOpsLogo';
 
 const navItems = [
   { label: 'About', href: '#about' },
@@ -44,10 +45,13 @@ export default function Navbar() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex-shrink-0"
+            className="flex-shrink-0 flex items-center gap-2"
           >
-            <a href="#" className="text-2xl font-bold bg-gradient-to-r from-cyan-500 via-violet-500 to-lime-500 bg-clip-text text-transparent">
-              DP
+            <a href="#" className="flex items-center gap-2">
+              <DevOpsLogo size={32} />
+              <span className="text-xl font-bold bg-gradient-to-r from-cyan-500 via-violet-500 to-lime-500 bg-clip-text text-transparent hidden sm:inline">
+                Divyal
+              </span>
             </a>
           </motion.div>
 
@@ -87,16 +91,22 @@ export default function Navbar() {
             >
               <LinkedinIcon size={20} className="text-slate-600 hover:text-violet-600" />
             </motion.a>
-            <motion.a
-              href="/resume.pdf"
-              download
+            <motion.button
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/resume.pdf';
+                link.download = 'Divyal_Padalkar_Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-violet-500 text-white rounded-lg text-sm font-semibold hover:shadow-lg transition-shadow"
             >
-              <FileText size={16} />
+              <Download size={16} />
               Resume
-            </motion.a>
+            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
