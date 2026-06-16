@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Divyal Padalkar | DevOps Portfolio
 
-## Getting Started
+**Production-Ready Next.js 15 Portfolio** | **Vercel Deployed** | **DevOps Focused**
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Project Overview
+
+A premium, animated DevOps portfolio showcasing enterprise-scale infrastructure projects with:
+- Next.js 15 (App Router) + TypeScript
+- Tailwind CSS with custom cyan-violet-lime palette
+- Framer Motion animations on every section
+- Three.js 3D infinity loop in hero
+- Responsive & SEO-optimized
+- Vercel-ready deployment
+
+## Project Structure
+
+```
+├── app/
+│   ├── layout.tsx          # Root layout with metadata
+│   ├── page.tsx            # Main page with Lenis scroll
+│   └── globals.css         # Global styles & Tailwind
+├── components/
+│   ├── navbar/Navbar.tsx   # Sticky nav with social links
+│   ├── hero/               # Hero + 3D canvas + background
+│   ├── about/About.tsx     # Bio + animated counters
+│   ├── experience/         # Timeline component
+│   ├── projects/           # Tabbed project grid + cards
+│   ├── skills/Skills.tsx   # Categorized skill tags
+│   ├── certifications/     # Credential cards
+│   ├── contact/Contact.tsx # Contact form + info
+│   ├── bits/BlobCursor.tsx # Custom cursor effect
+│   ├── Footer.tsx          # Multi-column footer
+│   ├── CountUp.tsx         # Counter animation
+│   └── Icons.tsx           # Brand icon SVGs
+├── public/
+│   ├── resume.pdf          # Your resume
+│   ├── og-image.png        # Open Graph image
+│   └── favicon.ico         # Favicon
+├── package.json
+├── tailwind.config.ts
+├── postcss.config.mjs
+├── vercel.json
+├── .env.example
+├── .gitignore
+└── CHECKLIST.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Quick Start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+# Opens http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Production Build
 
-## Learn More
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy to Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push to GitHub
+2. Import repo in [vercel.com](https://vercel.com)
+3. Deploy (zero config - Next.js auto-detected)
+4. Set env variables in Vercel dashboard
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Customization
 
-## Deploy on Vercel
+| Section | File |
+|---------|------|
+| Hero text | `components/hero/Hero.tsx` |
+| Bio + stats | `components/about/About.tsx` |
+| Experience | `components/experience/Experience.tsx` |
+| Projects | `components/projects/Projects.tsx` |
+| Skills | `components/skills/Skills.tsx` |
+| Contact info | `components/contact/Contact.tsx` |
+| Social links | `components/navbar/Navbar.tsx`, `components/Footer.tsx` |
+| Colors | `tailwind.config.ts` |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+React 19, Next.js 15, TypeScript, Tailwind CSS 3, Framer Motion 11, Three.js, Lenis, Lucide
