@@ -1,83 +1,110 @@
-'use client';
+"use client";
+import { motion } from "framer-motion";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+export default function DevOpsLogo({ size = 40 }: { size?: number }) {
+  const r = size / 2;
+  const strokeW = size * 0.06;
+  const CYAN = "#22d3ee";
+  const VIOLET = "#8b5cf6";
+  const LIME = "#a3e635";
 
-const DevOpsLogo = ({ size = 32 }: { size?: number }) => {
   return (
-    <motion.svg
+    <svg
       width={size}
       height={size}
-      viewBox="0 0 40 40"
+      viewBox={`0 0 ${size} ${size}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      whileHover={{ rotate: 360 }}
-      transition={{ duration: 0.8, ease: 'easeInOut' }}
+      aria-label="DevOps infinity logo"
     >
-      {/* Outer Rotating Ring */}
-      <motion.g
-        animate={{ rotate: 360 }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-        style={{ transformOrigin: 'center' }}
-      >
-        <circle cx="20" cy="20" r="18" stroke="url(#gradient1)" strokeWidth="2" fill="none" />
-      </motion.g>
-
-      {/* Inner Circle */}
-      <circle cx="20" cy="20" r="12" stroke="url(#gradient2)" strokeWidth="1.5" fill="none" />
-
-      {/* Pipeline Stage Dots */}
-      <motion.circle
-        cx="20" cy="8" r="2" fill="#06B6D4"
-        animate={{ opacity: [1, 0.3, 1] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-      />
-      <motion.circle
-        cx="28.5" cy="15.5" r="2" fill="#8B5CF6"
-        animate={{ opacity: [1, 0.3, 1] }}
-        transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
-      />
-      <motion.circle
-        cx="28.5" cy="24.5" r="2" fill="#22C55E"
-        animate={{ opacity: [1, 0.3, 1] }}
-        transition={{ duration: 1.5, repeat: Infinity, delay: 1 }}
-      />
-
-      {/* Connection Lines */}
-      <motion.line
-        x1="20" y1="10" x2="26" y2="14"
-        stroke="url(#gradient1)" strokeWidth="1" strokeLinecap="round"
-        animate={{ strokeDashoffset: [0, -4] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        strokeDasharray="4"
-      />
-      <motion.line
-        x1="26" y1="17" x2="26" y2="23"
-        stroke="url(#gradient2)" strokeWidth="1" strokeLinecap="round"
-        animate={{ strokeDashoffset: [0, -4] }}
-        transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-        strokeDasharray="4"
-      />
-      <motion.line
-        x1="26" y1="26" x2="20" y2="30"
-        stroke="url(#gradient1)" strokeWidth="1" strokeLinecap="round"
-        animate={{ strokeDashoffset: [0, -4] }}
-        transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-        strokeDasharray="4"
-      />
-
       <defs>
-        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#06B6D4" />
-          <stop offset="100%" stopColor="#8B5CF6" />
+        <linearGradient id="devGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={CYAN} />
+          <stop offset="100%" stopColor={VIOLET} />
         </linearGradient>
-        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#8B5CF6" />
-          <stop offset="100%" stopColor="#22C55E" />
+        <linearGradient id="opsGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor={VIOLET} />
+          <stop offset="100%" stopColor={LIME} />
         </linearGradient>
+        <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation={size * 0.08} result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
       </defs>
-    </motion.svg>
-  );
-};
 
-export default DevOpsLogo;
+      <circle
+        cx={r}
+        cy={r}
+        r={r - strokeW / 2}
+        stroke="rgba(255,255,255,0.06)"
+        strokeWidth={strokeW * 0.5}
+        fill="none"
+      />
+
+      <motion.circle
+        cx={r}
+        cy={r}
+        r={r - strokeW}
+        stroke="url(#devGrad)"
+        strokeWidth={strokeW}
+        strokeLinecap="round"
+        fill="none"
+        filter="url(#glow)"
+        strokeDasharray={`${Math.PI * (r - strokeW) * 0.88} ${Math.PI * (r - strokeW) * 2}`}
+        initial={{ strokeDashoffset: Math.PI * (r - strokeW) * 2, rotate: 0 }}
+        animate={{
+          strokeDashoffset: [Math.PI * (r - strokeW) * 2, 0, 0],
+          rotate: [0, 0, 360],
+        }}
+        transition={{
+          duration: 4,
+          ease: ["easeOut", "linear", "linear"],
+          times: [0, 0.4, 1],
+          repeat: Infinity,
+          repeatDelay: 0.5,
+        }}
+        style={{ transformOrigin: `${r}px ${r}px` }}
+      />
+
+      <motion.circle
+        cx={r}
+        cy={r}
+        r={r - strokeW}
+        stroke="url(#opsGrad)"
+        strokeWidth={strokeW}
+        strokeLinecap="round"
+        fill="none"
+        filter="url(#glow)"
+        strokeDasharray={`${Math.PI * (r - strokeW) * 0.88} ${Math.PI * (r - strokeW) * 2}`}
+        initial={{ strokeDashoffset: Math.PI * (r - strokeW) * 2, rotate: 180 }}
+        animate={{
+          strokeDashoffset: [Math.PI * (r - strokeW) * 2, 0, 0],
+          rotate: [180, 180, 540],
+        }}
+        transition={{
+          duration: 4,
+          ease: ["easeOut", "linear", "linear"],
+          times: [0, 0.4, 1],
+          repeat: Infinity,
+          repeatDelay: 0.5,
+          delay: 0.15,
+        }}
+        style={{ transformOrigin: `${r}px ${r}px` }}
+      />
+
+      <motion.circle
+        cx={r}
+        cy={r}
+        r={size * 0.06}
+        fill={CYAN}
+        animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        style={{ transformOrigin: `${r}px ${r}px` }}
+        filter="url(#glow)"
+      />
+    </svg>
+  );
+}
