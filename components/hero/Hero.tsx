@@ -50,15 +50,16 @@ export default function Hero() {
 
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-cyan-600 via-violet-600 to-lime-600 bg-clip-text text-transparent">
-                  DevOps Engineer
+                  DevOps & SRE
                 </span>
                 <br />
-                <span className="text-slate-800">& SRE Specialist</span>
+                <span className="text-slate-800">Engineer</span>
               </h1>
 
               <p className="text-xl text-slate-600 max-w-2xl leading-relaxed">
-                Building scalable, secure, and automated infrastructure for enterprise-grade applications. 
-                Passionate about DevSecOps, Platform Engineering, and making systems that just work.
+                Final-year B.E. Computer Engineering student building production-grade infrastructure. 
+                Specialized in Kubernetes, AWS, CI/CD automation, and DevSecOps. Currently automating infrastructure 
+                at Hisan Labs and reducing incident response times by 35%.
               </p>
             </motion.div>
 

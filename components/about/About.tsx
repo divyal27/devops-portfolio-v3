@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import CountUp from '@/components/CountUp';
+import ProfileImage from '@/components/ProfileImage';
 
 export default function About() {
   const { ref, inView } = useInView({
@@ -66,34 +67,30 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-lg text-slate-700 leading-relaxed">
-              I'm a DevOps engineer and SRE specialist with a focus on building reliable, scalable infrastructure at scale. 
-              My journey started with a deep interest in automation and cloud-native technologies.
+              Final-year B.E. Computer Engineering student at SPPU (2027) with hands-on DevOps internship experience automating infrastructure, CI/CD pipelines, monitoring, and incident response in production.
             </p>
 
             <p className="text-lg text-slate-700 leading-relaxed">
-              I specialize in designing and implementing CI/CD pipelines, Kubernetes orchestration, infrastructure as code, 
-              and security-first DevOps practices (DevSecOps). I believe in the power of automation to eliminate manual toil 
-              and create better systems.
+              Proficient in Kubernetes, Docker, Terraform, Ansible, GitHub Actions, Helm, and AWS/GCP/Azure. I've built end-to-end DevOps, SRE, and DevSecOps projects with strong focus on reliability, observability, automation, and secure delivery.
             </p>
 
             <p className="text-lg text-slate-700 leading-relaxed">
-              When I'm not building infrastructure, I'm learning about new technologies, contributing to open-source projects, 
-              and sharing knowledge with the community.
+              Currently interning at Hisan Labs, where I'm automating infrastructure, reducing MTTR by 35%, and designing CI/CD workflows that reduce failed deployments by 30%. Seeking DevOps, SRE, and DevSecOps roles to continue building scalable systems.
             </p>
 
             {/* Tech Stack Preview */}
             <div className="pt-4">
-              <p className="text-sm font-semibold text-slate-600 mb-3">Core Technologies:</p>
+              <p className="text-sm font-semibold text-slate-600 mb-3">Specializations:</p>
               <div className="flex flex-wrap gap-2">
                 {[
                   'Kubernetes',
                   'AWS',
                   'Docker',
                   'Terraform',
-                  'GitLab CI',
+                  'GitHub Actions',
                   'Prometheus',
-                  'ArgoCD',
                   'Ansible',
+                  'DevSecOps',
                 ].map((tech) => (
                   <motion.span
                     key={tech}
@@ -112,26 +109,32 @@ export default function About() {
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid grid-cols-2 gap-6"
+            className="space-y-6"
           >
-            {stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}
-                className="p-6 bg-white rounded-xl border border-slate-200 hover:border-cyan-400 transition-all"
-              >
-                <div className="text-4xl font-bold bg-gradient-to-r from-cyan-600 to-violet-600 bg-clip-text text-transparent mb-2">
-                  {inView ? (
-                    <CountUp from={0} to={stat.value} duration={2} />
-                  ) : (
-                    0
-                  )}
-                  {stat.label.includes('Scripts') && '+'}
-                </div>
-                <p className="text-slate-900 font-semibold text-sm mb-1">{stat.label}</p>
-                <p className="text-slate-600 text-xs">{stat.description}</p>
-              </motion.div>
-            ))}
+            {/* Profile Image */}
+            <ProfileImage />
+
+            {/* Stats Grid Below */}
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}
+                  className="p-4 bg-white rounded-xl border border-slate-200 hover:border-cyan-400 transition-all text-center"
+                >
+                  <div className="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-violet-600 bg-clip-text text-transparent mb-2">
+                    {inView ? (
+                      <CountUp from={0} to={stat.value} duration={2} />
+                    ) : (
+                      0
+                    )}
+                    {stat.label.includes('Scripts') && '+'}
+                  </div>
+                  <p className="text-slate-900 font-semibold text-xs mb-1">{stat.label}</p>
+                  <p className="text-slate-600 text-xs">{stat.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

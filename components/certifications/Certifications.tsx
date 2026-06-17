@@ -8,7 +8,7 @@ import { Award, ExternalLink, CheckCircle } from 'lucide-react';
 const certifications = [
   {
     title: 'Advanced Testing Practices Using AWS DevOps Tools',
-    issuer: 'Google Cloud',
+    issuer: 'AWS',
     date: '2024',
     credential: 'https://drive.google.com',
     verified: true,

@@ -8,42 +8,42 @@ const skillsData = [
   {
     category: 'Cloud & Infrastructure',
     color: 'from-cyan-400 to-blue-500',
-    skills: ['AWS EC2', 'AWS EKS', 'AWS RDS', 'AWS Lambda', 'VPC & Networking', 'Route53', 'CloudFormation', 'S3'],
+    skills: ['AWS', 'GCP', 'Azure', 'Linux', 'EC2', 'VPC', 'CloudWatch'],
   },
   {
     category: 'Containers & Orchestration',
     color: 'from-violet-400 to-purple-500',
-    skills: ['Docker', 'Kubernetes', 'Helm', 'Docker Compose', 'Container Registry', 'Istio', 'Calico'],
+    skills: ['Docker', 'Kubernetes', 'Helm', 'Container Registry', 'Docker Compose'],
   },
   {
     category: 'CI/CD & GitOps',
     color: 'from-pink-400 to-rose-500',
-    skills: ['GitLab CI', 'GitHub Actions', 'ArgoCD', 'Jenkins', 'GitOps', 'Pipeline Automation', 'Artifact Management'],
+    skills: ['GitHub Actions', 'Jenkins', 'GitLab CI', 'ArgoCD', 'Git', 'GitOps'],
   },
   {
-    category: 'Infrastructure as Code',
+    category: 'IaC & Configuration',
     color: 'from-orange-400 to-red-500',
-    skills: ['Terraform', 'Ansible', 'CloudFormation', 'Helm Charts', 'Pulumi', 'Vagrant', 'Packer'],
+    skills: ['Terraform', 'Ansible', 'Helm Charts', 'YAML', 'HCL'],
   },
   {
     category: 'Monitoring & Observability',
     color: 'from-lime-400 to-green-500',
-    skills: ['Prometheus', 'Grafana', 'ELK Stack', 'Loki', 'Jaeger', 'DataDog', 'New Relic', 'AlertManager'],
+    skills: ['Prometheus', 'Grafana', 'ELK Stack', 'Datadog', 'Dynatrace', 'AWS CloudWatch'],
   },
   {
     category: 'DevSecOps & Security',
     color: 'from-indigo-400 to-blue-600',
-    skills: ['Container Security', 'SAST/DAST', 'Vault', 'IAM', 'SSL/TLS', 'Security Scanning', 'Compliance', 'Secrets Management'],
+    skills: ['Trivy', 'SonarQube', 'Bandit', 'SAST', 'Container Scanning', 'Secrets Detection'],
+  },
+  {
+    category: 'AIOps & Analytics',
+    color: 'from-yellow-400 to-orange-500',
+    skills: ['Moogsoft', 'Splunk ITSI', 'LogicMonitor', 'Dynatrace', 'Datadog'],
   },
   {
     category: 'Programming Languages',
-    color: 'from-yellow-400 to-orange-500',
-    skills: ['Python', 'Bash', 'Go', 'YAML', 'HCL', 'JSON', 'SQL', 'JavaScript'],
-  },
-  {
-    category: 'Tools & Technologies',
     color: 'from-cyan-400 to-teal-500',
-    skills: ['Git', 'Linux', 'PostgreSQL', 'Redis', 'RabbitMQ', 'Apache', 'Nginx', 'Kafka'],
+    skills: ['Python', 'Bash', 'YAML', 'Java', 'JSON', 'SQL'],
   },
 ];
 

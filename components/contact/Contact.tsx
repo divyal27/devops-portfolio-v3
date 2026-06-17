@@ -40,14 +40,14 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'divyal@example.com',
-      href: 'mailto:divyal@example.com',
+      value: 'divyal0612@gmail.com',
+      href: 'mailto:divyal0612@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 8765432100',
-      href: 'tel:+918765432100',
+      value: '+91 7498841528',
+      href: 'tel:+917498841528',
     },
     {
       icon: MapPin,

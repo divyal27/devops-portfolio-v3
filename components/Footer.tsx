@@ -11,7 +11,7 @@ export default function Footer() {
   const socialLinks = [
     { icon: GithubIcon, href: 'https://github.com/divyal27', label: 'GitHub' },
     { icon: LinkedinIcon, href: 'https://linkedin.com/in/divyal-padalkar2704', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:divyal@example.com', label: 'Email' },
+    { icon: Mail, href: 'mailto:divyal0612@gmail.com', label: 'Email' },
   ];
 
   return (
